@@ -8,8 +8,10 @@ ctrl.inicio = (req,res)=>{
 ctrl.principal = async (req,res)=>{
 
     const user = await User.findOne({"_id":req.session._id}).select("-password");
-    
-    res.render("principal.hbs", {session: req.session, user})
+
+    var notas = [{"titulo":"nota1","detalle":"detalle1"},{"titulo":"nota2","detalle":"detalle2"},{"titulo":"nota2","detalle":"detalle2"} ];
+
+    res.render("principal.hbs", {session: req.session, user, notas})
 };
 
 ctrl.about = (req,res)=>{
