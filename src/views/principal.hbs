@@ -1,5 +1,5 @@
 
-<div class="row">
+<div class="row mb-2">
 
     <div class="col">
 
@@ -15,5 +15,40 @@
 
 
     </div>
+
+</div>
+
+<div class="row mb-2">
+
+    <div class="col text-end">
+
+        <a href="/notas/add" class="btn btn-success">Agregar Nota</a>
+
+    </div>
+
+</div>
+
+<div class="row">
+
+    {{#each notas}}
+    <div class="mb-2 col col-12 col-lg-4 col-md-4 col-sm-12">
+
+        <div class="card">
+            
+            <div class="card-header">
+                <span><b>{{title}}</b></span>
+                <a class="btn btn-primary float-end" type="button" href="/notas/editar/{{_id}}">Editar</a>
+            </div>
+
+            <div class="card-body">
+
+                <p>{{description}}</p>
+
+            </div>
+
+        </div>
+
+    </div>
+    {{/each}}
 
 </div>

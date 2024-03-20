@@ -19,11 +19,7 @@ app.engine(".hbs", exphbs.engine({
     defaultLayout: 'main',
     layoutsDir: path.join(app.get("views"),"layouts"),
     partialsDir: path.join(app.get("views"), "partials"),
-    extname: ".hbs",
-    runtimeOptions: {
-        allowProtoPropertiesByDefault: true,
-        allowProtoMethodsByDefault: true
-    }
+    extname: ".hbs"
 }))
 
 //DEFINICION DE VISTAS
@@ -49,6 +45,7 @@ require("./database/mongodb")
 //DEFINICION DE RUTAS
 require("./routes/index")(app)
 require("./routes/auth")(app)
+require("./routes/notas")(app)
 
 //EXPORTANDO MODULO APP
 module.exports = app;

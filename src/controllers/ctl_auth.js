@@ -2,7 +2,7 @@ const User = require("../models/user");
 const ctrl = {};
 
 ctrl.login = (req,res) =>{
-    res.render("auth/login.hbs");
+    res.render("auth/login.hbs", {ubicacion:req.path});
 };
 
 
@@ -32,7 +32,7 @@ ctrl.ingresar = async (req,res) =>{
 
 
 ctrl.registro = (req,res) =>{
-    res.render("auth/registro.hbs");
+    res.render("auth/registro.hbs", {ubicacion:req.path});
 }
 
 ctrl.guardar = async (req,res) =>{

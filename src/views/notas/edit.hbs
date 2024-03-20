@@ -1,0 +1,29 @@
+<div class="row">
+    <div class="col col-12 col-sm-8 col-md-8 col-lg-4 mx-auto">
+        <div class="card mt-5 rounded">
+            <div class="card-header text-center">
+                <h1 class="h4">
+                    Editar nota
+                </h1>
+            </div>
+            <div class="card-body">
+                <form action="/notas/add" method="POST">
+                    <div class="mb-3">
+                        <label for="title">Titulo:</label>
+                        <input type="text" class="form-control" name="title" placeholder="Titulo"
+                            autofocus />
+                    </div>
+                    <div class="mb-3">
+                        <label for="description">Descripción:</label>
+                        <textarea class="form-control" name="description" placeholder="Descripción de la nota"></textarea>
+
+                    </div>
+                    <button type="submit" class="btn btn-success btn-block">
+                        Guardar Nota
+                    </button>
+                </form>
+            </div>
+
+        </div>
+    </div>
+</div>
