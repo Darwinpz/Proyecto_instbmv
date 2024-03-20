@@ -19,12 +19,7 @@ app.engine(".hbs", exphbs.engine({
     defaultLayout: 'main',
     layoutsDir: path.join(app.get("views"),"layouts"),
     partialsDir: path.join(app.get("views"), "partials"),
-    helpers: require("./helpers/lib.js"),
-    extname: ".hbs",
-    runtimeOptions: {
-        allowProtoPropertiesByDefault: true,
-        allowProtoMethodsByDefault: true
-    }
+    extname: ".hbs"
 }))
 
 //DEFINICION DE VISTAS

@@ -1,5 +1,4 @@
 const User = require("../models/user");
-const Notas = require("../models/nota");
 const ctrl = {};
 
 ctrl.inicio = (req,res)=>{
@@ -10,13 +9,13 @@ ctrl.principal = async (req,res)=>{
 
     const user = await User.findOne({"_id":req.session._id}).select("-password");
 
-    var notas = await Notas.find({"user":user._id});
+    var notas = [{"titulo":"nota1","detalle":"detalle1"},{"titulo":"nota2","detalle":"detalle2"},{"titulo":"nota3","detalle":"detalle3"} ];
 
-    res.render("principal.hbs", {session: req.session, user, notas, ubicacion:req.path})
+    res.render("principal.hbs", {session: req.session, user, notas})
 };
 
 ctrl.about = (req,res)=>{
-    res.render("about.hbs", {session: req.session, ubicacion:req.path})
+    res.render("about.hbs", {session: req.session})
 };
 
 module.exports = ctrl;
